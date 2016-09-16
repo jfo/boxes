@@ -13,8 +13,13 @@
         <script>
             ReactDOM.render(
                 React.createElement(
-                    "whatsit",
-                    { className: "hoohaa", htmlFor: "derp" }
+                    "h1",
+                    {},
+                    "string",
+                    React.createElement("sup", {}, "UPP"),
+                    123,
+                    React.createElement("sub", {}, "little doooown"),
+                    ["what", 78]
                 ),
                 document.getElementById('example')
             );
