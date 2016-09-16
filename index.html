@@ -12,7 +12,10 @@
         <script src="https://unpkg.com/react-dom@15.3.1/dist/react-dom.js"></script>
         <script>
             ReactDOM.render(
-                React.createElement("whatsit", { class: "hoohaa" }),
+                React.createElement(
+                    "whatsit",
+                    { className: "hoohaa", htmlFor: "derp" }
+                ),
                 document.getElementById('example')
             );
         </script>
