@@ -17,7 +17,9 @@ let Row = (props) => {
         width: props.width
     }}>{
         Array(props.count).fill().map((_, i) => {
-            return <Box height={props.height} width={props.width / props.count} key={i} />;
+            return <Box height={props.height}
+                        width={props.width / props.count}
+                        key={i} />;
         })
     }</div>
 }
@@ -29,7 +31,10 @@ let Grid = (props) => {
         width: props.width
     }}>{
         Array(props.dimensions.y).fill().map((_, i) => {
-            return <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.x} key={i} />;
+            return <Row height={props.height / props.dimensions.y}
+                        width={props.width}
+                        count={props.dimensions.x}
+                        key={i} />;
         })
     }</div>
 }
