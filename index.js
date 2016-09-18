@@ -39,14 +39,17 @@ let Grid = (props) => {
     }</div>
 }
 
-setInterval(()=>{
+let renderAll = function() {
     ReactDOM.render(
         <Grid height={window.innerHeight}
               width={window.innerWidth}
               dimensions={{
-                  x: 50,
-                  y: 50
+                  x: 9,
+                  y: 5
               }}/>,
-        document.getElementById('example')
+        document.getElementById('grid')
     );
-}, 500)
+}
+
+renderAll();
+window.onresize = () => renderAll();
