@@ -11,12 +11,19 @@ let Box = () => {
     }} />;
 }
 
+let Row = () => {
+    return <div>
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+        <Box />
+    </div>
+}
+
 setInterval(()=>{
     ReactDOM.render(
-        <div>
-            <Box />
-            <Box />
-        </div>,
+        <Row />,
         document.getElementById('example')
     );
 }, 100)
