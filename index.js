@@ -16,11 +16,11 @@ let Row = (props) => {
         height: props.height,
         width: props.width
     }}>
-        <Box height={props.height} width={props.width / 5} />
-        <Box height={props.height} width={props.width / 5} />
-        <Box height={props.height} width={props.width / 5} />
-        <Box height={props.height} width={props.width / 5} />
-        <Box height={props.height} width={props.width / 5} />
+        <Box height={props.height} width={props.width / props.count} />
+        <Box height={props.height} width={props.width / props.count} />
+        <Box height={props.height} width={props.width / props.count} />
+        <Box height={props.height} width={props.width / props.count} />
+        <Box height={props.height} width={props.width / props.count} />
     </div>
 }
 
@@ -30,17 +30,17 @@ let Grid = (props) => {
         height: props.height,
         width: props.width
     }}>
-        <Row height={props.height / 5} width={props.width} />
-        <Row height={props.height / 5} width={props.width} />
-        <Row height={props.height / 5} width={props.width} />
-        <Row height={props.height / 5} width={props.width} />
-        <Row height={props.height / 5} width={props.width} />
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
     </div>
 }
 
 setInterval(()=>{
     ReactDOM.render(
-        <Grid height={500} width={500} />,
+        <Grid height={500} width={500} dimensions={{x: 5, y: 5}} />,
         document.getElementById('example')
     );
 }, 100)
