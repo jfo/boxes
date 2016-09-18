@@ -41,7 +41,7 @@ let Grid = (props) => {
 
 setInterval(()=>{
     ReactDOM.render(
-        <Grid height={500} width={500} dimensions={{x: 5, y: 5}} />,
+        <Grid height={window.innerHeight} width={window.innerWidth} dimensions={{x: 5, y: 5}} />,
         document.getElementById('example')
     );
 }, 100)
