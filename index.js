@@ -2,12 +2,12 @@ let randColor = function() {
     return '#'+Math.floor(Math.random()*16777215).toString(16);
 }
 
-let Box = () => {
+let Box = (props) => {
     return <div style={{
         display: "inline-block",
         background: randColor(),
-        width: "100px",
-        height: "100px"
+        height: props.height,
+        width: props.width
     }} />;
 }
 
@@ -16,11 +16,11 @@ let Row = (props) => {
         height: props.height,
         width: props.width
     }}>
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
+        <Box height={props.height} width={props.width / 5} />
+        <Box height={props.height} width={props.width / 5} />
+        <Box height={props.height} width={props.width / 5} />
+        <Box height={props.height} width={props.width / 5} />
+        <Box height={props.height} width={props.width / 5} />
     </div>
 }
 
