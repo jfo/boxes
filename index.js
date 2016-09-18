@@ -12,7 +12,10 @@ var Box = () => {
 
 setInterval(function() {
     ReactDOM.render(
-        <Box />,
+        <div>
+            <Box />
+            <Box />
+        </div>,
         document.getElementById('example')
     );
 }, 100)
