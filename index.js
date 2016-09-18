@@ -15,13 +15,11 @@ let Row = (props) => {
     return <div style={{
         height: props.height,
         width: props.width
-    }}>{[
-        <Box height={props.height} width={props.width / props.count} />,
-        <Box height={props.height} width={props.width / props.count} />,
-        <Box height={props.height} width={props.width / props.count} />,
-        <Box height={props.height} width={props.width / props.count} />,
-        <Box height={props.height} width={props.width / props.count} />
-    ]}</div>
+    }}>{
+        Array(props.count).fill().map((_, i) => {
+            return <Box height={props.height} width={props.width / props.count} key={i} />;
+        })
+    }</div>
 }
 
 let Grid = (props) => {
@@ -29,13 +27,11 @@ let Grid = (props) => {
         display: "inline-block",
         height: props.height,
         width: props.width
-    }}>{[
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
-    ]}</div>
+    }}>{
+        Array(props.dimensions.y).fill().map((_, i) => {
+            return <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.x} key={i} />;
+        })
+    }</div>
 }
 
 setInterval(()=>{
