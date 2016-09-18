@@ -15,13 +15,13 @@ let Row = (props) => {
     return <div style={{
         height: props.height,
         width: props.width
-    }}>
+    }}>{[
+        <Box height={props.height} width={props.width / props.count} />,
+        <Box height={props.height} width={props.width / props.count} />,
+        <Box height={props.height} width={props.width / props.count} />,
+        <Box height={props.height} width={props.width / props.count} />,
         <Box height={props.height} width={props.width / props.count} />
-        <Box height={props.height} width={props.width / props.count} />
-        <Box height={props.height} width={props.width / props.count} />
-        <Box height={props.height} width={props.width / props.count} />
-        <Box height={props.height} width={props.width / props.count} />
-    </div>
+    ]}</div>
 }
 
 let Grid = (props) => {
@@ -29,13 +29,13 @@ let Grid = (props) => {
         display: "inline-block",
         height: props.height,
         width: props.width
-    }}>
+    }}>{[
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
+        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>,
         <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
-        <Row height={props.height / props.dimensions.y} width={props.width} count={props.dimensions.y}/>
-    </div>
+    ]}</div>
 }
 
 setInterval(()=>{
