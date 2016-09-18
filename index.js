@@ -1,8 +1,8 @@
-var randColor = function() {
+let randColor = function() {
     return '#'+Math.floor(Math.random()*16777215).toString(16);
 }
 
-var Box = () => {
+let Box = () => {
     return <div style={{
         display: "inline-block",
         background: randColor(),
@@ -11,7 +11,7 @@ var Box = () => {
     }} />;
 }
 
-setInterval(function() {
+setInterval(()=>{
     ReactDOM.render(
         <div>
             <Box />
