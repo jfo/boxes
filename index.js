@@ -11,8 +11,11 @@ let Box = () => {
     }} />;
 }
 
-let Row = () => {
-    return <div>
+let Row = (props) => {
+    return <div style={{
+        height: props.height,
+        width: props.width
+    }}>
         <Box />
         <Box />
         <Box />
@@ -27,17 +30,17 @@ let Grid = (props) => {
         height: props.height,
         width: props.width
     }}>
-        <Row />
-        <Row />
-        <Row />
-        <Row />
-        <Row />
+        <Row height={props.height / 5} width={props.width} />
+        <Row height={props.height / 5} width={props.width} />
+        <Row height={props.height / 5} width={props.width} />
+        <Row height={props.height / 5} width={props.width} />
+        <Row height={props.height / 5} width={props.width} />
     </div>
 }
 
 setInterval(()=>{
     ReactDOM.render(
-        <Grid height="500px" width="500px" />,
+        <Grid height={500} width={500} />,
         document.getElementById('example')
     );
 }, 100)
