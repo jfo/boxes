@@ -21,8 +21,12 @@ let Row = () => {
     </div>
 }
 
-let Grid = () => {
-    return <div>
+let Grid = (props) => {
+    return <div style={{
+        display: "inline-block",
+        height: props.height,
+        width: props.width
+    }}>
         <Row />
         <Row />
         <Row />
@@ -33,7 +37,7 @@ let Grid = () => {
 
 setInterval(()=>{
     ReactDOM.render(
-        <Grid />,
+        <Grid height="500px" width="500px" />,
         document.getElementById('example')
     );
 }, 100)
