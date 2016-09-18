@@ -4,6 +4,7 @@ var randColor = function() {
 
 var Box = () => {
     return <div style={{
+        display: "inline-block",
         background: randColor(),
         width: "100px",
         height: "100px"
