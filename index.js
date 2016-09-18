@@ -21,9 +21,19 @@ let Row = () => {
     </div>
 }
 
+let Grid = () => {
+    return <div>
+        <Row />
+        <Row />
+        <Row />
+        <Row />
+        <Row />
+    </div>
+}
+
 setInterval(()=>{
     ReactDOM.render(
-        <Row />,
+        <Grid />,
         document.getElementById('example')
     );
 }, 100)
