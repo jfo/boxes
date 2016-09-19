@@ -6,7 +6,7 @@ class Box extends React.Component {
     constructor() {
         super();
         this.state = {
-            color: "black"
+            color: randColor()
         }
     }
 
@@ -16,7 +16,6 @@ class Box extends React.Component {
             background: this.state.color,
             height: this.props.height,
             width: this.props.width,
-            transition: "0.5s"
         }} onMouseOver={()=> this.setState({color: randColor()})}/>;
     }
 }
@@ -34,29 +33,44 @@ let Row = (props) => {
     }</div>
 }
 
-let Grid = (props) => {
-    return <div style={{
-        display: "inline-block",
-        height: props.height,
-        width: props.width
-    }}>{
-        Array(props.dimensions.y).fill().map((_, i) => {
-            return <Row height={props.height / props.dimensions.y}
-                        width={props.width}
-                        count={props.dimensions.x}
-                        key={i} />;
-        })
-    }</div>
+class Grid extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            x: 1,
+            y: 1
+        }
+    }
+
+    render() {
+        return <div>
+        <div style={{
+            position: "fixed"
+        }}>
+            <input type="range" value={this.state.x} min={1} max={25} onChange={(e)=>this.setState({x: parseInt(e.target.value)})} />
+            <input type="range" value={this.state.y} min={1} max={25} onChange={(e)=>this.setState({y: parseInt(e.target.value)})} />
+        </div>
+        <div style={{
+            display: "inline-block",
+            height: this.props.height,
+            width: this.props.width
+        }}>{
+            Array(this.state.y).fill().map((_, i) => {
+                return <Row height={this.props.height / this.state.y}
+                            width={this.props.width}
+                            count={this.state.x}
+                            key={i} />;
+            })
+        }</div>
+        </div>
+    }
 }
 
 let renderAll = function() {
     ReactDOM.render(
         <Grid height={window.innerHeight}
               width={window.innerWidth}
-              dimensions={{
-                  x: 60,
-                  y: 40
-              }}/>,
+              />,
         document.getElementById('grid')
     );
 }
