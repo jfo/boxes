@@ -6,7 +6,7 @@ class Box extends React.Component {
     constructor() {
         super();
         this.state = {
-            color: randColor()
+            color: "black"
         }
     }
 
@@ -16,6 +16,7 @@ class Box extends React.Component {
             background: this.state.color,
             height: this.props.height,
             width: this.props.width,
+            transition: "0.5s"
         }} onMouseOver={()=> this.setState({color: randColor()})}/>;
     }
 }
@@ -53,8 +54,8 @@ let renderAll = function() {
         <Grid height={window.innerHeight}
               width={window.innerWidth}
               dimensions={{
-                  x: 9,
-                  y: 5
+                  x: 60,
+                  y: 40
               }}/>,
         document.getElementById('grid')
     );
