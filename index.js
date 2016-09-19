@@ -45,7 +45,8 @@ class Grid extends React.Component {
     render() {
         return <div>
         <div style={{
-            position: "fixed"
+            position: "fixed",
+            padding: "6px"
         }}>
             <input type="range" value={this.state.x} min={1} max={25} onChange={(e)=>this.setState({x: parseInt(e.target.value)})} />
             <input type="range" value={this.state.y} min={1} max={25} onChange={(e)=>this.setState({y: parseInt(e.target.value)})} />
