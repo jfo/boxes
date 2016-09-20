@@ -1,4 +1,4 @@
-let randColor = function() {
+const randColor = function() {
     return '#'+Math.floor(Math.random()*16777215).toString(16);
 }
 
@@ -11,6 +11,7 @@ class Box extends React.Component {
     }
 
     render() {
+        console.log(this);
         return <div style={{
             display: "inline-block",
             background: this.state.color,
@@ -20,7 +21,7 @@ class Box extends React.Component {
     }
 }
 
-let Row = (props) => {
+const Row = (props) => {
     return <div style={{
         height: props.height,
         width: props.width
@@ -67,7 +68,7 @@ class Grid extends React.Component {
     }
 }
 
-let renderAll = function() {
+const renderAll = function() {
     ReactDOM.render(
         <Grid height={window.innerHeight}
               width={window.innerWidth}
